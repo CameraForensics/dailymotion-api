@@ -39,7 +39,7 @@ public class DailymotionConnector {
 
     public VideoContent downloadVideo(final DailymotionResponseItem video, boolean includeProbeData) throws IOException, YoutubeDLException {
         String directory = System.getProperty("java.io.tmpdir");
-        String videoId = video.getUrl().substring(video.getUrl().lastIndexOf('/') + 1);
+        String videoId = video.getVideoId();
         log.info("Writing video {} to {}", video.getUrl(), directory);
 
         YoutubeDLRequest request = new YoutubeDLRequest(video.getUrl(), directory);

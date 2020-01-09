@@ -35,4 +35,12 @@ public class DailymotionResponseItem {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    public String getVideoId() {
+        if (url != null) {
+            return url.substring(url.lastIndexOf('/') + 1);
+        }
+
+        return null;
+    }
 }
